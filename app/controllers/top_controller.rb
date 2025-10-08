@@ -19,7 +19,7 @@ class TopController < ActionController::Base
     # ユーザが存在して、入力パスワードがハッシュと一致すればログイン
     if user && BCrypt::Password.new(user.pass) == pw
       session[:login_uid] = uid
-      session[:pass] = pw
+      # session[:pass] = pw
       redirect_to action: "main"
     else
       render "error", status: 422
