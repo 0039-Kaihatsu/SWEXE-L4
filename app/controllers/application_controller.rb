@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
   
   def L4
-    cookies[:c] || = 0
+    cookies[:c] ||= 0
     cookies[:c] = cookies[:c].to_i + 1
     render plain: cookies[:c]
   end
